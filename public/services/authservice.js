@@ -1,4 +1,4 @@
-var app = angular.module('main');
+var app = angular.module('mainModule');
 
 app.service('authService', function ($http, $q) {
 

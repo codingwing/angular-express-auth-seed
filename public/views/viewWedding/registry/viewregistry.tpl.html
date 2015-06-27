@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="jumbotron">
+				<h2>Registry</h2>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include src="'views/viewWedding/navbarview.inc.html'"></div>
+
+	<form class="form-horizontal">		
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Link:</label>
+			<div class="col-sm-10">
+				<input type="url" class="form-control" ng-model="registry.link" placeholder="registry link">
+			</div>	
+		</div>
+
+<!-- 		<div class="form-group">
+			<label class="col-sm-2 control-label">Link2:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="registry.link2" placeholder="registry link2">
+			</div>	
+		</div> -->
+
+		<!-- <div class="form-group">
+			<div class="col-sm-10">
+				<button class="btn btn-primary" ng-click="addRegistryBtnClicked()">Add</button>
+				<button class="btn btn-primary" ng-click="cancelRegistryBtnClicked()">Cancel</button>
+				<button class="btn btn-primary" ng-click="editRegistryBtnClicked()">Edit</button>
+			</div>
+		</div> -->
+	</form>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="jumbotron">
+				<h2>Photos</h2>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include src="'views/viewWedding/navbarview.inc.html'"></div>
+
+	<form class="form-horizontal">
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Upload photo:</label>
+			<div class="col-sm-10">
+				<input type="file" class="form-control" ng-model="photos.img" accept="image/*" placeholder="upload photo">
+			</div>	
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-10">
+				<button class="btn btn-primary" ng-click="addPhotosBtnClicked()">Add</button>
+				<button class="btn btn-primary" ng-click="cancelPhotosBtnClicked()">Cancel</button>
+				<!-- <button class="btn btn-primary" ng-click="editPhotosBtnClicked()">Edit</button> -->
+			</div>
+		</div>
+	</form>
+</div>

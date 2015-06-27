@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+<!--            <div class="jumbotron">-->
+<!--                <h2>View Wedding</h2>-->
+                <h2>Wedding page <br/> of <br/>{{couple.bridesName}} and {{couple.groomsName}}</h2>
+<!--            </div>-->
+        </div>
+    </div>
+    <!--    <div ng-include src="'views/viewWedding/navbarview.inc.html'"></div>-->
+</div>
+
+<h4>Carousel goes here...</h4>
+<div class="container-fluid" ng-controller="viewCarouselCtrl">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{uri}}/{{slide.img}}" style="height:350px; margin:0 auto;">
+                    <!--<img ng-src="{{slide.imgUrl}}" style="margin:auto;">-->
+                    <div class="carousel-caption">
+                        <!--<h4>Slide {{$index}}</h4>-->
+                        <p>{{slide.caption}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+</div>
+
+<h4>Couple section goes here...</h4>
+{{test}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3>{{couple.bridesName}} <span class="glyphicon glyphicon-heart"></span> {{couple.groomsName}}</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Our Story</h4>
+                    <p>
+                        <h4>
+                            {{couple.ourStory}}
+<!--                            Our story began in August 1994. We were both going to school at St. George Univesity. On the first day we arrived on campus, we met in front of Mary's dorm. John could tell that Mary, for the first time living away from her family, was homesick. A simple smile and a quick "Hello" allowed us to get to know each other. Throughout the rest of the semester we worked in the same custodial team, often pairing up to clean classrooms and offices, forcing us to be together for long periods of time. Before Thanksgiving Day we both knew it was only a matter of time. When we got back to school after Christmas the rest was history!-->
+                        </h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Wedding section goes here...</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Date: {{wedding.date | date: 'medium'}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Time: {{wedding.time}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Location: {{wedding.location}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Description: {{wedding.location}}</h4>
+        </div>
+    </div>
+</div>
+
+
+<h4>Reception section goes here...</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Date: {{reception.date}} </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Time: {{reception.time}}</h4>
+        </div>
+        <div class="col-sm-12">
+            <h4>Location: {{reception.location}}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Description: {{reception.description}}</h4>
+        </div>
+    </div>
+</div>
+
+
+<h4>Registry section goes here...</h4>
+<div class="container">
+    <div class="row" ng-repeat="reg in registry">
+        <div class="col-sm-12">
+            <h4>Link: <a href="{{reg.linkUrl}}">{{reg.linkUrl}}</a> </h4>
+        </div>
+    </div>
+
+
+    <h4>Well wishes section goes here...</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-sm-12">
+                        Post your Well-Wishes
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <textarea ng-model="comment.text" placeholder="Enter your well-wishes" style="width:550px"></textarea>
+                                </div>
+                            </div>
+                        </br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input ng-model="comment.name" placeholder="Enter Your Name" style="width:550px" required/></input>
+                                </div>
+                            </div>
+                        </br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button ng-click="saveCommentBtnClicked(comment)">Post Well-Wishes</button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4>Well-Wishes</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="well" ng-repeat="com in commentlist | orderBy: '-createdAt' ">
+                                        {{com.text}} 
+                                        <div class="text-right"><small>by {{com.name}}</small></div>
+                                    </div>
+                                        
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

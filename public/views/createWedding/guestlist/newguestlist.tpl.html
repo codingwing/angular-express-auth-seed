@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="jumbotron">
+				<h2>Guest List</h2>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include src="'views/createWedding/navbarcreate.inc.html'"></div>
+
+	<form name="newguestlistForm" class="form-horizontal">
+
+		<div ng-controller="newGuestlistCtrl">
+			<div ng-repeat="guest in guestlist">
+				<!-- <label class="col-sm-2 control-label" ng-show="showGuestLabel(guest)">Guest:</label> -->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Guest Firstname:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="guest.firstname" placeholder="guest firstname">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Guest Lastname:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" ng-model="guest.lastname" placeholder="guest lastname">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Email:</label>
+					<span class="label label-danger" ng-show="submitted && newguestlistForm.email.$error.required">Required!</span>
+					<span class="label label-danger" ng-show="submitted && newguestlistForm.$error.email">Invalid email!</span>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" ng-model="guest.email" placeholder="jane.doe@example.com" required>
+					</div>
+				</div>
+
+				<button class="btn btn-primary btn-sm" ng-show="$last" ng-click="addNewGuest()">Add another guest</button>
+
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="col-sm-10">
+				<button class="btn btn-primary" ng-click="saveGuestlistBtnClicked(guestlist)">Save</button>
+				<button class="btn btn-primary" ng-click="cancelGuestlistBtnClicked()">Cancel</button>
+				<!-- <button class="btn btn-primary" ng-click="editGuestlistBtnClicked()">Edit</button> -->
+			</div>
+		</div>
+	</form>
+</div>

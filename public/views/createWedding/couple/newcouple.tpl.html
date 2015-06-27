@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="jumbotron">
+				<h2>Couple</h2>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include src="'views/createWedding/navbarcreate.inc.html'"></div>
+
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Bride's Name:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="couple.bridesName" placeholder="Bride's Name">
+			</div>	
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Groom's Name:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="couple.groomsName" placeholder="Groom's Name">
+			</div>	
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-2 control-label" >Your story:</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows="10" cols="100" ng-model="couple.ourStory" placeholder="Enter your story here..."></textarea>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-10">
+				<button class="btn btn-primary" ng-click="saveCoupleBtnClicked(couple)">Save</button>
+				<button class="btn btn-primary" ng-click="cancelCoupleBtnClicked()">Cancel</button>
+				<!-- <button class="btn btn-primary" ng-click="editCoupleBtnClicked(couple)">Edit</button> -->
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="jumbotron">
+                <h2>Photos</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include src="'views/createWedding/navbarcreate.inc.html'"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="myForm">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <legend>Upload on form submit</legend>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Picture:
+                            <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" required>
+                            <i ng-show="myForm.file.$error.required">*required</i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Caption:
+                            <input type="text" name="caption" ng-model="caption" size="39" required>
+                            <i ng-show="myForm.caption.$error.required">*required</i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button ng-disabled="!myForm.$valid" ng-click="uploadPic(picFile)">Submit</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img ng-show="picFile[0] != null" ngf-src="picFile[0]" class="thumb">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <!--
+    <form class="form-horizontal" ng-controller="newPhotolistCtrl">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Upload photo:</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" ng-model="photo.img" accept="image/*" placeholder="upload photo">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-10">
+                <button class="btn btn-primary" ng-click="savePhotoBtnClicked(photo)">Save</button>
+                <button class="btn btn-primary" ng-click="cancelPhotosBtnClicked()">Cancel</button>
+                <button class="btn btn-primary" ng-click="editPhotosBtnClicked()">Edit</button>
+            </div>
+        </div>
+    </form>
+-->
+</div>
